@@ -19,6 +19,13 @@ start nc -lnvp port
 we get shell as www-data  
 user.txt  permission denied  
 find / -user elyana 2>/dev/null  
+we get the path and save password  
+ssh as user  
+flag is base64 encoded  
+sudo -l  
+https://gtfobins.github.io/gtfobins/socat/   
+
+
  
 
 
