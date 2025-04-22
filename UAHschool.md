@@ -44,6 +44,6 @@
 44. so, we create a password on our system and make it in the format user is store in /etc/passwd file
 45. Then we echo the same to /etc/passwd
 46. as eval() is a system function, it get executed
-47. 
+
   
 
