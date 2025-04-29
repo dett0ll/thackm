@@ -16,9 +16,23 @@ http://10.10.16.234:22/nnxhweOV/index.php?cmd=whoami ->CI works
 Lets upload a php reverse shell  
 we get shell as www-data  
 in /home, we have jacks password list  
-download to local server   
-start a python server  
-python -m SimpleHTTPServer  
+We can view the list   
+copy paste to local machine   
+hydra  
+we get password for jack  
+ssh   
+we get usr.jpg  
+start python server on remote machine  
+download user.jpg to local machine. it has user flag  
+## privlege escalation  
+find / -perm -4000 -type f 2>/dev/null  
+/usr/bin/strings  
+/usr/bin/strings is a Unix/Linux command-line tool used to extract readable strings (sequences of printable characters) from binary files. It's especially useful for analyzing executables or binary data to identify embedded text, such as error messages, file paths, or even hardcoded secret  
+/usr/bin/strings /root/root.txt  
+we get the root flag  
+
+
+
 
 
 
